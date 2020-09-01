@@ -1,2 +1,26 @@
 //header
-header
+.header
+    .container
+        a(href="./").header__logo
+        nav.nav
+            ul.header__list
+                li
+                    a(href="#") About
+                li
+                    a(href="#")#menu-tab Help
+                        +icon('arrow-bott')
+                    
+                    ul.nav__dropdown#drop
+                        li
+                            a(href="#") User Guide
+                        li
+                            a(href="#") Contact Support
+
+                li
+                    a(href="#") Features
+            button.btn.btn_purple.btn_purple_menu Sign Up
+        button.btn.btn_purple Sign Up
+        button.btn-burger
+            span.top
+            span.bot
+            
