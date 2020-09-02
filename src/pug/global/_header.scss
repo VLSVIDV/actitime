@@ -1,160 +1,164 @@
-.header{
+.header {
     display: flex;
     position: relative;
     min-height: 86px;
-    @include mq ('993'){
+    @include mq("993") {
         margin-top: 30px;
     }
-    .container{
+    .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
     }
 }
 
-.header__logo{
+.header__logo {
     width: 72px;
     height: 35px;
-    background:url("../img/logo.svg") no-repeat;
+    background: url("../img/logo.svg") no-repeat;
 }
 
 //burger
 
-.btn-burger{
-    @include mq ('993'){
+.btn-burger {
+    @include mq("993") {
         display: none;
     }
     position: relative;
     width: 50px;
-    height: 24px;
+    height: 41px;
     opacity: 0.5;
     display: block;
     cursor: pointer;
-    border:none;
+    border: none;
     background: transparent;
-    outline:none;
-    // &:hover{
-    //   .top{
-    //     transform: rotate(45deg);
-    //     top: 18px;
-    //     left: 0px;
-    //     transition: all ease-in-out .3s;
-    //     &:after{
-    //       opacity: 0;
-    //       transition: all ease-in-out .3s;
-    //     }
-    //   }
-    //   .bot{
-    //     transform: rotate(135deg);
-    //     transition: all ease-in-out .3s;
-    //   }
-    // }
-  }
-  .top{
-    transition: all ease-in-out .3s;
+    outline: none;
+
+}
+.top {
+    transition: all ease-in-out 0.3s;
     position: absolute;
     top: 0;
     left: 0;
     background: #212353;
-    height: 2px;
+    height: 3px;
     width: 50px;
     opacity: 1;
-    &:after{
-      content:'';
-      position: absolute;
-      top: 10px;
-      left: 0;
-      height: 2px;
-      width: 50px;
-      background:#212353;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        height: 3px;
+        width: 50px;
+        background: #212353;
     }
-  }
-  .bot{
-    transition: all ease-in-out .3s;
+}
+.bot {
+    transition: all ease-in-out 0.3s;
     position: absolute;
     top: 20px;
     left: 0;
     background: #212353;
-    height: 2px;
+    height: 3px;
     width: 50px;
     opacity: 1;
-  }
-  //end burger
+}
+
+.btn-burger.active{
+    .top{
+        transform: rotate(45deg);
+        top: 18px;
+        left: 0px;
+        transition: all ease-in-out .3s;
+        &:after{
+          opacity: 0;
+          transition: all ease-in-out .3s;
+        }
+      }
+    .bot{
+        transform: rotate(135deg);
+        transition: all ease-in-out .3s;
+      }
+}
+//end burger
 
 //nav
 
-.nav{
+.nav {
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     opacity: 1;
-    @include mq ('993'){
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;
+    @include mq("993") {
         position: relative;
-        top:0;
+        top: 0;
         display: block;
-        min-height:auto;
+        max-height: initial;
         margin-right: auto;
         margin-left: 131px;
+        overflow: visible;
     }
 }
 
-.header__list{
+.header__list {
     display: flex;
     flex-direction: column;
+    margin: 0;
     padding: 0;
- 
-    &>li{
+
+    & > li {
         position: relative;
-        border-top: 1px solid #D6B9FF;
-        &:not(:last-child){
-            
-            @include mq ('993'){
+        border-top: 1px solid #d6b9ff;
+        &:not(:last-child) {
+            @include mq("993") {
                 margin-right: 47px;
             }
         }
-        &:last-child{
-            border-bottom: 1px solid #D6B9FF;
-            @include mq ('993'){
+        &:last-child {
+            border-bottom: 1px solid #d6b9ff;
+            @include mq("993") {
                 border-bottom: none;
             }
         }
-        @include mq ('993'){
+        @include mq("993") {
             border-top: 0;
+        }
+
+        > a {
+            display: block;
+            padding: 21px 0 21px 21px;
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            color: #212353;
+            &:hover {
+                color: #9c69e2;
+            }
+            @include mq("993") {
+                padding: 20px 0 30px;
+            }
         }
     }
 
-    a{
-        display: block;
-        padding: 21px 0 21px 21px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 18px;
-        color: #212353;
-        &:hover{
-            color:#9C69E2;
-        }
-        @include mq ('993'){
-            padding: 0;
-        }
-    }
-    @include mq ('993'){
+    @include mq("993") {
         flex-direction: row;
-        &>li:nth-child(2){
-            &:hover{
-                &>.nav__dropdown{
-                    visibility: visible;
-                    padding: 12px 17px 12px 24px;
+        & > li:nth-child(2) {
+            &:hover {
+                & > .nav__dropdown {
+                    display: block;
                     opacity: 1;
-                    max-height:inherit;
                 }
-                &>a,
-                .icon{
-                    color: #9C69E2;
+                & > a,
+                .icon {
+                    color: #9c69e2;
                 }
             }
-            &:hover{
-                .icon{
+            &:hover {
+                .icon {
                     transform: rotate(180deg);
                 }
             }
@@ -162,93 +166,78 @@
     }
 }
 
-.nav__dropdown{
+.nav__dropdown {
+    background: #f9f4ff;
+    border: 0;
+    left: 0;
+    max-height: 0;
     position: relative;
     top: 0;
-    left: 0;
-    visibility: inherit;
-    border: 0;
-    background: #F9F4FF;
-    transition: .3s;
-    max-height: 0;
-    opacity: 0;
-    padding: 0;
+    transition: max-height 0.3s;
     z-index: 2;
+    overflow: hidden;
+    padding: 0;
 
-    li{
-        &:not(:last-child){
-            margin-bottom: 10px;
-            @include mq ('993'){
-                margin-bottom: 20px;
-            }
+    @include mq("993") {
+        background: transparent;
+        border-radius: 10px;
+        border: 1px solid #9c69e2;
+        left: -17px;
+        max-height: initial;
+        min-width: 169px;
+        position: absolute;
+        top: 67px;
+        display: none;
+        transition: opacity 0.3s;
+        overflow: visible;
+    }
+
+    a {
+        display: block;
+        font-size: 16px;
+        padding: 20px 17px 20px 24px;
+        @include mq("993") {
+            padding: 10px 14px;
         }
     }
+}
 
-    a{
-        font-size: 16px;
-        padding: 10px 0 10px 21px;
 
-    }
-
-    @include mq ('993'){
-        visibility: hidden;
+@include mq("993") {
+    .nav__dropdown:after,
+    .nav__dropdown:before {
+        content: "";
+        border: solid transparent;
         position: absolute;
-        top: 47px;
-        left: -17px;
-        background:transparent;
-        min-width: 169px;
-        border: 1px solid #9C69E2;
-        border-radius: 10px;
+        margin-left: -12px;
+        top: -27px;
+        left: 37%;
+        width: 0;
+    }
+
+    .nav__dropdown:after {
+        border-top-color: #fff;
+        border-width: 16px;
+        margin-left: -16px;
+        top: -27px;
+        transform: rotate(180deg);
+    }
+
+    .nav__dropdown:before {
+        border-width: 12px;
+        border-top-color: #9c69e2;
+        transform: rotate(180deg);
+        top: -25px;
     }
 }
 
-@include mq ('993'){
-.nav__dropdown:after,
-.nav__dropdown:before,{
-    content: '';
-   border: solid transparent;
-   position: absolute;
-   margin-left: -12px;
-   top: -27px;
-   left: 37%;
-   width: 0;
-}
-
-.nav__dropdown:after{
-   border-top-color: #fff;
-   border-width: 16px;
-   margin-left: -16px;
-   top: -27px;
-   transform: rotate(180deg);
-}
-
-.nav__dropdown:before{
-    border-width: 12px;
-    border-top-color: #9c69e2;
-    transform: rotate(180deg);
-    top: -25px;
-}
-}
-
-
-
-
-
-
-.nav__dropdown.open{
-    padding: 12px 17px 12px 24px;
-    opacity: 1;
-    max-height:inherit;
-}
-
-
-.icon.icon-arrow-bott{
+.icon.icon-arrow-bott {
     position: absolute;
     right: 33px;
     width: 11px;
     height: 18px;
     transform: rotate(-90deg);
-    @include mq ('993'){
+    @include mq("993") {
         position: relative;
         right: 0;
         width: 6.25px;
@@ -257,17 +246,25 @@
     }
 }
 
-.btn_purple{
+.menu-tab{
+    &.active{
+        .icon-arrow-bott{
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.btn_purple {
     display: none;
-    @include mq ('993'){
+    @include mq("993") {
         display: block;
     }
 }
 
-.btn_purple_menu{
+.btn_purple_menu {
     display: block;
     margin: 40px auto;
-    @include mq ('993'){
+    @include mq("993") {
         display: none;
     }
 }
