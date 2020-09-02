@@ -90,10 +90,12 @@
     top: 60px;
     left: 0;
     width: 100%;
+    background:#fff;
     opacity: 1;
     max-height: 0;
     overflow: hidden;
     transition: max-height .3s;
+    z-index: 4;
     @include mq("993") {
         position: relative;
         top: 0;

@@ -1,5 +1,11 @@
 h1 {
   font-size: $font-size-h1;
+  font-weight: 700;
+  color:$color-main;
+  text-align: center;
+  @include mq("768"){
+    font-size: 40px;
+  }
 }
 
 h2 {

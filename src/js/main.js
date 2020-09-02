@@ -3,4 +3,5 @@ document.addEventListener('DOMContentLoaded', function() {
   @@include('modules/polyfills.js');
   @@include('modules/dropdown.js');
   @@include('modules/menu.js');
+  @@include('modules/slick.js');
 });
