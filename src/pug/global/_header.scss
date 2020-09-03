@@ -16,6 +16,9 @@
     width: 72px;
     height: 35px;
     background: url("../img/logo.svg") no-repeat;
+    @include mq('993'){
+        width: 82px;
+    }
 }
 
 //burger
@@ -200,6 +203,9 @@
         padding: 20px 17px 20px 24px;
         @include mq("993") {
             padding: 10px 14px;
+        }
+        &:hover{
+            color: #9C69E2;
         }
     }
 }

@@ -1,15 +1,23 @@
-.btn_purple{
+.btn{
     font-size: 18px;
     padding: 0 24px;
-    border: 2px solid #ededed;
-    background: #9C69E2;
     color: #fff;
     letter-spacing: 2.2px;
     min-height:60px;
     min-width: 180px;
     border-radius: 50px;
     transition: .3s;
+}
+
+.btn_purple{
+    background: #9C69E2;
+    border: 2px solid #ededed;
     &:hover{
         background: #B17FF4;
     }
+}
+
+.btn_orange{
+    background: #EEAA12;
+    max-width: 148px;
 }

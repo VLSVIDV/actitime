@@ -1,2 +1,15 @@
 //footer
-footer
+footer.footer
+    .container
+        .footer-nav
+            a(href="#").footer__logo
+                +icon('logo-white')
+            ul.footer-links
+                li
+                    a(href="#") About Us
+                li
+                    a(href="#") Privacy Policy
+
+        form.footer-contacts
+            input(type="email" placeholder="Enter your email" required).footer__input
+            button.btn.btn_orange Sign Up Now
