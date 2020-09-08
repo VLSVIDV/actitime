@@ -6,8 +6,6 @@
 
 @import "global/components/components";
 
-@import "global/modals/modals";
-
 @import "global/sprite/sprite";
 //@import "global/sprite/css-sprite.css";
 
@@ -17,7 +15,5 @@
 @import "global/typography";
 @import "global/container";
 @import "global/fonts";
-
-@import "../pug/pages/ui/_ui"; //remove before prod
 
 @import "../pug/pages/index/_1-screen";

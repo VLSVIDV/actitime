@@ -5,21 +5,14 @@
 .slick-next {
   font-size: 0;
   line-height: 0;
-
   position: absolute;
   top: 50%;
-
   display: block;
-
   width: 20px;
   height: 20px;
   padding: 0;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
-
   cursor: pointer;
-
   color: transparent;
   border: none;
   outline: none;
@@ -51,10 +44,8 @@
 .slick-next:before {
   font-size: 20px;
   line-height: 1;
-
   opacity: .75;
   color: white;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -100,7 +91,7 @@
 
 .slick-dots {
   position: absolute;
-  bottom: -65px;
+  bottom: -50px;
   display: block;
   width: 100%;
   padding: 0;
@@ -111,14 +102,11 @@
 
 .slick-dots li {
   position: relative;
-
   display: inline-block;
-
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
   padding: 0;
-
   cursor: pointer;
 }
 
@@ -127,12 +115,12 @@
   line-height: 0;
   display: block;
   border-radius: 50%;
-  background: white;
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   padding: 5px;
   cursor: pointer;
   color: transparent;
+  background-color: transparent;
   border: 0;
   outline: none;
 }
@@ -142,41 +130,31 @@
   outline: none;
 }
 
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before {
-  opacity: 1;
-}
-
 .slick-dots li button:before {
+  border-radius: 50%;
+  background-color: #fff;
   font-size: 6px;
   line-height: 20px;
-
   position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 20px;
-  height: 20px;
-
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
   content: '';
   text-align: center;
-
-  opacity: .25;
-  color: black;
-
+  opacity: 1;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-dots li.slick-active button:before {
   opacity: .75;
-  color: black;
-  opacity: 1;
   color: #000;
   background: #F063B8;
   border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  left: -2px;
-  top: -1px;
+  width: 10px;
+  height: 10px;
+
 }
